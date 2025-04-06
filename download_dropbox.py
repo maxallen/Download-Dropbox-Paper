@@ -33,6 +33,7 @@ def export_paper_docs(dbx, dropbox_path, local_root):
             elif isinstance(entry, FileMetadata):
                 # Remove .paper suffix from the file path if it exists
                 local_path = local_path.rstrip('.paper')
+                local_path = local_path + '.md'
 
                 print(f"Writing file: {local_path}")
                 os.makedirs(os.path.dirname(local_path), exist_ok=True)
